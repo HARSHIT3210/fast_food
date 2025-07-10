@@ -1,5 +1,3 @@
-import CustomButton from "@/components/customButton";
-import CustomInput from "@/components/customInput";
 import { images } from "@/constants";
 import { Slot } from "expo-router";
 import React from "react";
@@ -36,19 +34,8 @@ const _layout = () => {
             className="self-center size-48 absolute -bottom-16"
           />
         </View>
-        <CustomInput
-          label={""}
-          placeholder={"Enter a Text"}
-          value={""}
-          onChangeText={function (text: string): void {
-            throw new Error("Function not implemented.");
-          }}
-          secureTextEntry={false}
-          keyBoardType={"default"}
-        />
-        <CustomButton />
+        <Slot />
       </ScrollView>
-      <Slot />
     </KeyboardAvoidingView>
   );
 };
