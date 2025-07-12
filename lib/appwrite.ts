@@ -1,11 +1,11 @@
 import { CreateUserParams, SignInParams } from "@/types";
 import {
-    Account,
-    Avatars,
-    Client,
-    Databases,
-    ID,
-    Query,
+  Account,
+  Avatars,
+  Client,
+  Databases,
+  ID,
+  Query,
 } from "react-native-appwrite";
 
 export const appwriteConfig = {
@@ -53,6 +53,7 @@ export const createUser = async ({
 
 export const signIn = async ({ email, password }: SignInParams) => {
   try {
+    await account.deleteSession("current");
     const session = await account.createEmailPasswordSession(email, password);
   } catch (e) {
     throw new Error(e as string);
